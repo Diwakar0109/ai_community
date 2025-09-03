@@ -1,0 +1,75 @@
+
+[
+  {
+    "id": "proj-001",
+    "topic": "Real-time Object Detection for Retail Analytics",
+    "tags": ["Computer Vision", "Python", "TensorFlow"],
+    "short_description": "An AI-powered system that analyzes video feeds to track customer movement and product interaction, providing actionable insights for store layout optimization.",
+    "thumbnail_url": "https://picsum.photos/seed/proj-001/600/400",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "link": {
+      "type": "github",
+      "url": "https://github.com/"
+    }
+  },
+  {
+    "id": "proj-002",
+    "topic": "NLP-Based Customer Support Ticket Classifier",
+    "tags": ["NLP", "PyTorch", "Hugging Face"],
+    "short_description": "A machine learning model that automatically reads and categorizes incoming support tickets by urgency and topic, routing them to the correct department.",
+    "thumbnail_url": "https://picsum.photos/seed/proj-002/600/400",
+    "video_url": "https://player.vimeo.com/video/902841459",
+    "link": {
+      "type": "document",
+      "url": "#"
+    }
+  },
+  {
+    "id": "proj-003",
+    "topic": "Generative Adversarial Network for Synthetic Data",
+    "tags": ["GANs", "PyTorch", "Data Science"],
+    "short_description": "Developing a GAN to generate realistic synthetic datasets for training machine learning models, particularly in scenarios with limited real-world data.",
+    "thumbnail_url": "https://picsum.photos/seed/proj-003/600/400",
+    "video_url": "https://www.youtube.com/embed/uGksIjv_M_E",
+    "link": {
+      "type": "github",
+      "url": "https://github.com/"
+    }
+  },
+  {
+    "id": "proj-004",
+    "topic": "Autonomous Drone Navigation with Reinforcement Learning",
+    "tags": ["Reinforcement Learning", "Drones", "AI"],
+    "short_description": "Training an agent to navigate complex environments autonomously using deep reinforcement learning, enabling applications in logistics and surveillance.",
+    "thumbnail_url": "https://picsum.photos/seed/proj-004/600/400",
+    "video_url": "https://player.vimeo.com/video/824814718",
+    "link": {
+      "type": "document",
+      "url": "#"
+    }
+  },
+  {
+    "id": "proj-005",
+    "topic": "AI-Powered Predictive Maintenance for Industrial IoT",
+    "tags": ["Predictive Analysis", "IoT", "Scikit-learn"],
+    "short_description": "A system that uses sensor data from industrial machines to predict failures before they happen, reducing downtime and maintenance costs.",
+    "thumbnail_url": "https://picsum.photos/seed/proj-005/600/400",
+    "video_url": "https://www.youtube.com/embed/Jz_-_3K6x2Y",
+    "link": {
+      "type": "github",
+      "url": "https://github.com/"
+    }
+  },
+  {
+    "id": "proj-006",
+    "topic": "Financial Market Sentiment Analysis Tool",
+    "tags": ["FinTech", "NLP", "Sentiment Analysis"],
+    "short_description": "Analyzing news articles, social media, and financial reports in real-time to gauge market sentiment and predict stock price movements.",
+    "thumbnail_url": "https://picsum.photos/seed/proj-006/600/400",
+    "video_url": "https://player.vimeo.com/video/76979871",
+    "link": {
+      "type": "github",
+      "url": "https://github.com/"
+    }
+  }
+]
