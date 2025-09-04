@@ -1,4 +1,3 @@
-// In your frontend ChatbotWidget.tsx
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,7 +6,6 @@ import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
 import { v4 as uuidv4 } from 'uuid';
 
-// (The Message and TypingIndicator interfaces/components remain the same)
 interface Message {
   id: string;
   text: string;
@@ -31,6 +29,8 @@ const ChatbotWidget: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
     const chatContainerRef = useRef<HTMLDivElement>(null);
     const backendUrl = "https://ai-community-chatbot.onrender.com";
+
+    // ... (Your useEffects and handleSendMessage logic remains the same)
 
     useEffect(() => {
         if (isOpen && !sessionId) {
@@ -90,6 +90,7 @@ const ChatbotWidget: React.FC = () => {
         }
     };
 
+
     return (
         <>
             <motion.button
@@ -106,7 +107,8 @@ const ChatbotWidget: React.FC = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className="fixed bottom-24 right-6 z-50 w-full max-w-sm h-[60vh] max-h-[500px] bg-[#1e1e1e] rounded-lg shadow-2xl flex flex-col border border-gray-700"
+                        className="fixed bottom-24 z-50 h-[60vh] max-h-[500px] bg-[#1e1e1e] rounded-lg shadow-2xl flex flex-col border border-gray-700 
+                                   inset-x-4 sm:inset-x-auto sm:right-6 sm:w-full sm:max-w-sm"
                         initial={{ opacity: 0, y: 50, scale: 0.8 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 50, scale: 0.8 }}
@@ -117,14 +119,12 @@ const ChatbotWidget: React.FC = () => {
                             {messages.map((msg) => (
                                 <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                                     <div
-                                        className={`max-w-xs md:max-w-md lg:max-w-lg rounded-lg px-3 py-2 text-sm ${
+                                        className={`max-w-[75%] rounded-lg px-3 py-2 text-sm break-words ${
                                             msg.sender === 'user' 
                                                 ? 'bg-cyan-600 text-white' 
-                                                // --- IMPROVED BOT MESSAGE STYLING ---
                                                 : 'bg-gray-700 text-gray-200'
                                         }`}
                                     >
-                                        {/* --- IMPROVED MARKDOWN RENDERING --- */}
                                         <ReactMarkdown 
                                           className="prose prose-sm prose-invert prose-p:my-2 prose-headings:my-2 prose-ul:my-2"
                                         >
