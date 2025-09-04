@@ -20,16 +20,27 @@ const InputField: React.FC<{
         name={name}
         type={type}
         rows={as === 'textarea' ? 5 : undefined}
-        className="peer w-full p-3 bg-gray-900 border-2 border-gray-700 rounded-md text-white focus:outline-none focus:border-cyan-500 transition-colors"
+        // This input class is correct. We use placeholder-transparent to hide the actual placeholder text.
+        className="peer w-full p-3 bg-gray-900 border-2 border-gray-700 rounded-md text-white placeholder-transparent focus:outline-none focus:border-cyan-500 transition-colors"
         placeholder={label}
         whileFocus={{ boxShadow: '0 0 0 2px #22d3ee' }}
         required
       />
       <label
         htmlFor={id}
-        className={`absolute left-3 top-3.5 bg-gray-900 px-1 text-sm text-gray-400 transition-all pointer-events-none
-          peer-placeholder-shown:text-base 
-          peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-cyan-400`}
+        // --- THIS IS THE LINE TO CHANGE ---
+        // We add `bg-gray-900` and `px-1` to the active states.
+        className={`absolute left-3 top-3.5 text-gray-400 text-base transition-all pointer-events-none
+          peer-focus:-top-2.5
+          peer-focus:text-sm
+          peer-focus:text-cyan-400
+          peer-focus:px-1
+          peer-focus:bg-gray-900
+          peer-[:not(:placeholder-shown)]:-top-2.5
+          peer-[:not(:placeholder-shown)]:text-sm
+          peer-[:not(:placeholder-shown)]:text-cyan-400
+          peer-[:not(:placeholder-shown)]:px-1
+          peer-[:not(:placeholder-shown)]:bg-gray-900`}
       >
         {label}
       </label>
