@@ -2,74 +2,54 @@
 [
   {
     "id": "proj-001",
-    "topic": "Real-time Object Detection for Retail Analytics",
-    "tags": ["Computer Vision", "Python", "TensorFlow"],
-    "short_description": "An AI-powered system that analyzes video feeds to track customer movement and product interaction, providing actionable insights for store layout optimization.",
-    "thumbnail_url": "https://picsum.photos/seed/proj-001/600/400",
-    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "link": {
-      "type": "github",
-      "url": "https://github.com/"
+    "topic": "Real-time people tracking and analytics",
+    "category": "Computer Vision",
+    "tags": ["Computer Vision", "NVIDIA-Deepstream", "Jetson orin"],
+    "short_description": "Real-time people analytics product using computer vision and NVIDIA DeepStream, optimized for edge devices. Deployed at Sankara Hospital, Coimbatore, delivering actionable insights for smart surveillance, crowd management, and operational optimization.",
+    "brief_description": "Description:\nA fully developed product for real-time people analytics using computer vision and NVIDIA DeepStream. The system is optimized for edge devices, enabling scalable and efficient deployment in resource-constrained environments. Currently deployed at Sankara Hospital, Coimbatore.\n\nKey Contributions:\n\n- Designed a robust pipeline for multi-stream video processing and real-time analytics.\n- Integrated automated logging and reporting for insights such as crowd patterns and occupancy trends.\n- Optimized for low-latency performance, ensuring smooth operation on edge-based deployments (Jetson Orin Nano, Jetson AGX Orin, Jetson Thor series, etc.).\n\nImpact:\n\n- Provides organizations with actionable insights for crowd management, retail analytics, and smart surveillance.\n- Reduces reliance on manual monitoring while increasing operational efficiency.\n- Flexible design allows deployment from small-scale edge devices to larger centralized systems.",
+    "thumbnail_url": "https://i.ibb.co/ccqL5g2S/aliyar-count.png",
+    "video_url": "https://i.ibb.co/ccqL5g2S/aliyar-count.png",
+    "links": {
+      "document": "https://docs.google.com/document/d/1C5GIScXB7we_wDB3obmKeDMOMpOfUOmxTO1KOs7d69w/edit?usp=sharing"
     }
   },
   {
-    "id": "proj-002",
-    "topic": "NLP-Based Customer Support Ticket Classifier",
-    "tags": ["NLP", "PyTorch", "Hugging Face"],
-    "short_description": "A machine learning model that automatically reads and categorizes incoming support tickets by urgency and topic, routing them to the correct department.",
-    "thumbnail_url": "https://picsum.photos/seed/proj-002/600/400",
-    "video_url": "https://player.vimeo.com/video/902841459",
-    "link": {
-      "type": "document",
-      "url": "#"
-    }
+      "id": "proj-002",
+      "topic": "Real-time People Counting System",
+      "category": "Computer Vision",
+      "tags": ["Computer Vision", "NVIDIA-DeepStream", "Jetson Orin"],
+      "short_description": "A real-time people counting solution powered by computer vision and NVIDIA DeepStream, optimized for edge devices. Deployed at CODISSIA, Coimbatore, it delivers automated headcounts and occupancy insights to enhance smart surveillance and facility management.",
+      "brief_description": "Description:\nA real-time people counting product leveraging computer vision and NVIDIA DeepStream, specifically designed for edge device optimization. The system ensures scalable, efficient, and accurate occupancy monitoring in diverse environments. Currently deployed at CODISSIA, Coimbatore.\n\nKey Contributions:\n\n- Built a robust computer vision pipeline for precise people counting across multiple camera streams.\n- Enabled automated collection, logging, and reporting of occupancy data, including entry/exit counts and real-time occupancy trends.\n- Optimized system performance for low-latency execution on NVIDIA Jetson platforms (Orin Nano, AGX Orin, Thor series, etc.).\n\nImpact:\n\n- Empowers organizations with actionable insights for smart surveillance, facility management, and retail analytics.\n- Minimizes the need for manual monitoring while boosting accuracy and operational efficiency.\n- Offers flexible deployment ranging from small-scale single-camera setups to enterprise-grade multi-camera networks.",
+      "thumbnail_url": "https://i.ibb.co/ZRJfYwNf/codissia-people.png",
+      "video_url": "https://www.youtube.com/embed/CjdJLOVBmiQ",
+      "links": {
+        "document": "https://example.com/docs/people-counting.pdf"
+      }
   },
   {
     "id": "proj-003",
-    "topic": "Generative Adversarial Network for Synthetic Data",
-    "tags": ["GANs", "PyTorch", "Data Science"],
-    "short_description": "Developing a GAN to generate realistic synthetic datasets for training machine learning models, particularly in scenarios with limited real-world data.",
-    "thumbnail_url": "https://picsum.photos/seed/proj-003/600/400",
-    "video_url": "https://www.youtube.com/embed/uGksIjv_M_E",
-    "link": {
-      "type": "github",
-      "url": "https://github.com/"
+    "topic": "Real-time Vehicle Counting and Monitoring System",
+    "category": "Computer Vision",
+    "tags": ["Computer Vision", "NVIDIA-DeepStream", "Edge AI", "Jetson Orin"],
+    "short_description": "Real-time vehicle counting and monitoring solution using computer vision and NVIDIA DeepStream, optimized for edge devices. Delivers automated traffic insights and occupancy monitoring for smart transportation management.",
+    "brief_description": "Description:\nA fully developed real-time vehicle counting and monitoring product leveraging computer vision and NVIDIA DeepStream. The system is optimized for edge devices, enabling scalable, low-latency traffic monitoring in diverse environments.\n\nKey Contributions:\n\n- Built a robust pipeline for multi-stream vehicle detection and counting in real-time.\n- Implemented automated logging and reporting for metrics such as traffic density, vehicle flow, and occupancy patterns.\n- Optimized system performance for edge deployment on NVIDIA Jetson platforms (Orin Nano, AGX Orin, Thor series, etc.).\n\nImpact:\n\n- Provides actionable insights for traffic management, parking monitoring, and smart city planning.\n- Reduces manual monitoring efforts while increasing accuracy in vehicle counting.\n- Flexible deployment from small-scale single-camera setups to large multi-camera networks for comprehensive traffic analytics.",
+    "thumbnail_url": "https://i.ibb.co/zHGv68Gb/vehicle-count.png",
+    "video_url": "https://www.youtube.com/embed/M2qh5dktCwQ",
+    "links": {
+      "document": "https://example.com/docs/vehicle-counting.pdf"
     }
   },
   {
     "id": "proj-004",
-    "topic": "Autonomous Drone Navigation with Reinforcement Learning",
-    "tags": ["Reinforcement Learning", "Drones", "AI"],
-    "short_description": "Training an agent to navigate complex environments autonomously using deep reinforcement learning, enabling applications in logistics and surveillance.",
-    "thumbnail_url": "https://picsum.photos/seed/proj-004/600/400",
-    "video_url": "https://player.vimeo.com/video/824814718",
-    "link": {
-      "type": "document",
-      "url": "#"
-    }
-  },
-  {
-    "id": "proj-005",
-    "topic": "AI-Powered Predictive Maintenance for Industrial IoT",
-    "tags": ["Predictive Analysis", "IoT", "Scikit-learn"],
-    "short_description": "A system that uses sensor data from industrial machines to predict failures before they happen, reducing downtime and maintenance costs.",
-    "thumbnail_url": "https://picsum.photos/seed/proj-005/600/400",
-    "video_url": "https://www.youtube.com/embed/Jz_-_3K6x2Y",
-    "link": {
-      "type": "github",
-      "url": "https://github.com/"
-    }
-  },
-  {
-    "id": "proj-006",
-    "topic": "Financial Market Sentiment Analysis Tool",
-    "tags": ["FinTech", "NLP", "Sentiment Analysis"],
-    "short_description": "Analyzing news articles, social media, and financial reports in real-time to gauge market sentiment and predict stock price movements.",
-    "thumbnail_url": "https://picsum.photos/seed/proj-006/600/400",
-    "video_url": "https://player.vimeo.com/video/76979871",
-    "link": {
-      "type": "github",
-      "url": "https://github.com/"
+    "topic": "Role-Based AI Chat System with MCP",
+    "category": "Gen AI",
+    "tags": ["AI", "Chatbot", "FastAPI", "MCP", "Role-Based Agents", "LLM"],
+    "short_description": "A web-based AI chat system using MCP and role-specific agents, providing tailored responses for HR and Admin tasks with session context management.",
+    "brief_description": "Description:\nDeveloped a fully functional AI chat system leveraging MCP (Multi-Client Protocol) to create role-specific agents for HR and Admin tasks. The system manages multiple user sessions, retains conversation history, and provides secure login access.\n\nKey Contributions:\n\n- Built a FastAPI backend with MCP integration for real-time agent communication.\n- Implemented role-specific AI agents to handle HR and Admin queries differently.\n- Enabled session-based conversation history and context retention.\n- Designed a robust startup and shutdown mechanism for agent resource management.\n- Created a user-friendly web interface for chat interactions and login functionality.\n\nImpact:\n\n- Streamlines organizational workflows by providing AI-assisted responses tailored to roles.\n- Reduces manual workload and improves efficiency for HR and Admin operations.\n- Scalable and secure, capable of handling multiple concurrent users and roles.",
+    "thumbnail_url": "https://i.ibb.co/HD3XFRvV/mcp.png",
+    "video_url": "https://www.youtube.com/embed/ieOD9dIa52s",
+    "links": {
+      "document": "https://example.com/docs/mcp-role-based-chat.pdf"
     }
   }
 ]

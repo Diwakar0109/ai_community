@@ -52,8 +52,8 @@ const App: React.FC = () => {
       <Navbar />
       <main className="relative z-10">
         <HeroSection />
-        <ProjectsSection projects={projects} loading={loading} error={error} onCardClick={handleCardClick} />
         <AboutSection />
+        <ProjectsSection projects={projects} loading={loading} error={error} onCardClick={handleCardClick} />
         <ContactSection />
       </main>
       <Footer />

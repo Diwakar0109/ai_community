@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onCardClick }) => {
       }}
       transition={{ type: 'spring', stiffness: 300 }}
     >
-      <div className="relative overflow-hidden h-48">
+      <div className="relative overflow-hidden aspect-[16/9]">
         <motion.img 
           src={project.thumbnail_url} 
           alt={project.topic} 

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../types';
@@ -17,13 +16,10 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.8, y: 50 },
-    // FIX: Corrected Framer Motion transition type inference issue by specifying 'spring' as a const.
     visible: { opacity: 1, scale: 1, y: 0, transition: { type: 'spring' as const, stiffness: 250, damping: 25 } },
     exit: { opacity: 0, scale: 0.8, y: -50, transition: { duration: 0.3 } },
   };
   
-  const LinkIcon = project.link.type === 'github' ? FiGithub : FiFileText;
-
   return (
     <motion.div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-70 backdrop-blur-sm p-4"
@@ -53,16 +49,47 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
         </div>
         <div className="p-8">
           <h2 className="text-3xl font-bold text-white mb-4">{project.topic}</h2>
-          <p className="text-gray-300 mb-6">{project.short_description}</p>
-          <a
-            href={project.link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-cyan-500 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 hover:bg-cyan-400"
-          >
-            <LinkIcon className="text-xl" />
-            <span>{project.link.type === 'github' ? 'View on GitHub' : 'View Document'}</span>
-          </a>
+          
+          {/* --- NEW BRIEF DESCRIPTION SECTION --- */}
+          {/* We check if brief_description exists. If so, render it. */}
+          {/* The `whitespace-pre-wrap` class is crucial for respecting newlines (\n) */}
+          {project.brief_description ? (
+             <p className="text-gray-300 mb-6 whitespace-pre-wrap leading-relaxed">
+              {project.brief_description}
+            </p>
+          ) : (
+            // Fallback to short_description if brief_description is not available
+            <p className="text-gray-300 mb-6">{project.short_description}</p>
+          )}
+          {/* --- END OF NEW SECTION --- */}
+          
+          <div className="flex flex-wrap items-center gap-4">
+            {/* Conditionally render GitHub button */}
+            {project.links.github && (
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-cyan-500 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 hover:bg-gray-700"
+              >
+                <FiGithub className="text-xl" />
+                <span>View on GitHub</span>
+              </a>
+            )}
+
+            {/* Conditionally render Document button */}
+            {project.links.document && (
+              <a
+                href={project.links.document}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-cyan-500 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 hover:bg-cyan-400"
+              >
+                <FiFileText className="text-xl" />
+                <span>View Document</span>
+              </a>
+            )}
+          </div>
         </div>
         <button
           onClick={onClose}

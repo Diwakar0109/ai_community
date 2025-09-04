@@ -1,100 +1,104 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiLoader, FiCheck, FiX } from 'react-icons/fi';
+import { useForm, ValidationError } from '@formspree/react'; // 1. Import Formspree hooks
 
-type FormState = 'idle' | 'sending' | 'success' | 'error';
+// (InputField component from Step 2 goes here)
+const InputField: React.FC<{
+  id: string;
+  label: string;
+  type: string;
+  name: string;
+  as?: 'textarea';
+}> = ({ id, label, type, name, as }) => {
+  const Component = as === 'textarea' ? motion.textarea : motion.input;
+  return (
+    <div className="relative">
+      <Component
+        id={id}
+        name={name}
+        type={type}
+        rows={as === 'textarea' ? 5 : undefined}
+        className="peer w-full p-3 bg-gray-900 border-2 border-gray-700 rounded-md text-white focus:outline-none focus:border-cyan-500 transition-colors"
+        placeholder={label}
+        whileFocus={{ boxShadow: '0 0 0 2px #22d3ee' }}
+        required
+      />
+      <label
+        htmlFor={id}
+        className={`absolute left-3 top-3.5 bg-gray-900 px-1 text-sm text-gray-400 transition-all pointer-events-none
+          peer-placeholder-shown:text-base 
+          peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-cyan-400`}
+      >
+        {label}
+      </label>
+    </div>
+  );
+};
+
 
 const ContactForm: React.FC = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [formState, setFormState] = useState<FormState>('idle');
+  // 2. Initialize Formspree hook with your form ID
+  const [state, handleSubmit] = useForm("xqadgqdv");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormState('sending');
-    // Simulate API call
-    setTimeout(() => {
-      if (name && email && message) {
-        setFormState('success');
-      } else {
-        setFormState('error');
-      }
-    }, 2000);
-  };
-
-  const InputField: React.FC<{
-    id: string;
-    label: string;
-    type: string;
-    value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-    as?: 'textarea';
-  }> = ({ id, label, type, value, onChange, as }) => {
-    const Component = as === 'textarea' ? motion.textarea : motion.input;
+  // 3. Handle the success state by showing a thank you message
+  if (state.succeeded) {
     return (
-      <div className="relative">
-        <Component
-          id={id}
-          type={type}
-          value={value}
-          onChange={onChange}
-          rows={as === 'textarea' ? 5 : undefined}
-          className="w-full p-3 bg-gray-900 border-2 border-gray-700 rounded-md text-white placeholder-transparent focus:outline-none focus:border-cyan-500 transition-colors"
-          placeholder={label}
-          whileFocus={{ boxShadow: '0 0 0 2px #22d3ee' }}
-        />
-        <label
-          htmlFor={id}
-          className={`absolute left-3 -top-2.5 bg-gray-900 px-1 text-sm text-gray-400 transition-all
-            ${value ? 'opacity-100' : 'opacity-0'} peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-cyan-400`}
-        >
-          {label}
-        </label>
-      </div>
+      <motion.div
+        className="text-center p-10 bg-gray-900 rounded-lg border-2 border-cyan-500"
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+      >
+        <FiCheck className="text-5xl text-cyan-400 mx-auto mb-4" />
+        <h3 className="text-2xl font-bold text-white">Thank you!</h3>
+        <p className="text-gray-400 mt-2">Your message has been sent successfully.</p>
+      </motion.div>
     );
-  };
+  }
 
-
+  // 4. Render the form, now controlled by Formspree
   return (
     <motion.form 
-      onSubmit={handleSubmit} 
+      onSubmit={handleSubmit} // Use Formspree's handleSubmit
       className="space-y-6"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.2 }}
     >
-      <InputField id="name" label="Name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      <InputField id="email" label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      <InputField id="message" label="Message" type="text" as="textarea" value={message} onChange={(e) => setMessage(e.target.value)} />
+      {/* Update InputFields to use 'name' and remove value/onChange */}
+      <InputField id="name" label="Name" type="text" name="name" />
+      <InputField id="email" label="Email" type="email" name="email" />
+      <ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+        className="text-red-500 text-sm -mt-4"
+      />
+
+      <InputField id="message" label="Message" type="text" as="textarea" name="message" />
+      <ValidationError 
+        prefix="Message" 
+        field="message"
+        errors={state.errors}
+        className="text-red-500 text-sm -mt-4"
+      />
       
       <div className="text-center">
         <motion.button
           type="submit"
+          disabled={state.submitting} // Use Formspree's submitting state
           className="w-full max-w-xs bg-cyan-500 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 hover:bg-cyan-400 disabled:bg-gray-600 flex items-center justify-center"
-          disabled={formState === 'sending'}
-          whileHover={{ scale: formState === 'idle' ? 1.05 : 1 }}
-          whileTap={{ scale: formState === 'idle' ? 0.95 : 1 }}
+          whileHover={{ scale: !state.submitting ? 1.05 : 1 }}
+          whileTap={{ scale: !state.submitting ? 0.95 : 1 }}
         >
           <AnimatePresence mode="wait">
-            {formState === 'sending' && (
+            {state.submitting ? (
               <motion.div key="sending" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                 <FiLoader className="animate-spin" />
               </motion.div>
-            )}
-            {formState === 'success' && (
-              <motion.div key="success" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} className="flex items-center gap-2">
-                <FiCheck /> Sent!
-              </motion.div>
-            )}
-             {formState === 'error' && (
-              <motion.div key="error" initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} className="flex items-center gap-2">
-                <FiX /> Error!
-              </motion.div>
-            )}
-            {formState === 'idle' && (
+            ) : (
               <motion.span key="idle" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                 Send Message
               </motion.span>
