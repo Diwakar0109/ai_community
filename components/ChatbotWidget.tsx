@@ -42,7 +42,7 @@ const ChatbotWidget: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
-  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  const backendUrl = "https://ai-community-chatbot.onrender.com"
 
   // --- Effects ---
 
