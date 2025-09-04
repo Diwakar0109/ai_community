@@ -106,8 +106,7 @@ const ChatbotWidget: React.FC = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className="fixed bottom-24 z-50 h-[60vh] max-h-[500px] bg-[#1e1e1e] rounded-lg shadow-2xl flex flex-col border border-gray-800 
-           inset-x-4 sm:inset-x-auto sm:right-6 sm:w-full sm:max-w-sm"
+                        className="fixed bottom-24 right-6 z-50 w-full max-w-sm h-[60vh] max-h-[500px] bg-[#1e1e1e] rounded-lg shadow-2xl flex flex-col border border-gray-700"
                         initial={{ opacity: 0, y: 50, scale: 0.8 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 50, scale: 0.8 }}
