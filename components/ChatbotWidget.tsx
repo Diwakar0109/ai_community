@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiMessageSquare, FiSend, FiX } from 'react-icons/fi';
 import axios from 'axios';
 import ReactMarkdown from 'react-markdown';
-import { v4 as uuidv4 } from 'uuid'; // Use a library for robust unique IDs
+import { v4 as uuidv4 } from 'uuid';
 
-// --- Installation ---
+// --- Installation (if you haven't already) ---
 // npm install axios react-markdown uuid
 // npm install -D @types/uuid 
 
@@ -42,7 +42,10 @@ const ChatbotWidget: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const chatContainerRef = useRef<HTMLDivElement>(null);
-  const backendUrl = "https://ai-community-chatbot.onrender.com"
+  
+  // --- BACKEND URL ---
+  // The backend URL is now set to your deployed Render service.
+  const backendUrl = "https://ai-community-chatbot.onrender.com";
 
   // --- Effects ---
 
@@ -53,10 +56,9 @@ const ChatbotWidget: React.FC = () => {
       console.log("New Session ID created:", newSessionId);
       setSessionId(newSessionId);
       // Set the initial greeting from the bot
-      setMessages([{ id: 'initial-greeting', text: 'Hello! How can I help you today?', sender: 'bot' }]);
+      setMessages([{ id: 'initial-greeting', text: 'Hello! I am an AI assistant with a specific knowledge base. How can I help you today?', sender: 'bot' }]);
     }
   }, [isOpen, sessionId]);
-
 
   // Auto-scroll to the latest message
   useEffect(() => {
@@ -69,34 +71,30 @@ const ChatbotWidget: React.FC = () => {
   // --- API Communication ---
   const handleSendMessage = async () => {
     const userMessageText = inputValue.trim();
-    if (!userMessageText || !sessionId) return; // Don't send empty messages
+    if (!userMessageText || !sessionId || isLoading) return; // Prevent sending while loading or if empty
 
-    // 1. Add user's message to the chat immediately
     const userMessage: Message = { id: uuidv4(), text: userMessageText, sender: 'user' };
     setMessages((prev) => [...prev, userMessage]);
     setInputValue('');
     setIsLoading(true);
 
     try {
-      // 2. Format chat history for the backend (array of tuples)
+      // Format chat history for the backend
       const chat_history = messages
-        .filter(m => m.id !== 'initial-greeting') // Don't include the initial static greeting
+        .filter(m => m.id !== 'initial-greeting')
         .map(m => (m.sender === 'user' ? [m.text, ''] : ['', m.text]))
         .reduce((acc: [string, string][], val) => {
-          if (val[0]) acc.push([val[0], '']); // User message
-          else if (acc.length > 0) acc[acc.length - 1][1] = val[1]; // Bot response
+          if (val[0]) acc.push([val[0], '']); 
+          else if (acc.length > 0) acc[acc.length - 1][1] = val[1];
           return acc;
         }, []);
       
-
-      // 3. Send the request to the backend
       const response = await axios.post(`${backendUrl}/chat`, {
         session_id: sessionId,
         question: userMessageText,
         chat_history: chat_history,
       });
 
-      // 4. Add the bot's response to the chat
       const botMessage: Message = { id: uuidv4(), text: response.data.answer, sender: 'bot' };
       setMessages((prev) => [...prev, botMessage]);
 
@@ -104,7 +102,7 @@ const ChatbotWidget: React.FC = () => {
       console.error("Error communicating with the chatbot backend:", error);
       const errorMessage: Message = {
         id: uuidv4(),
-        text: 'Sorry, I encountered an error. Please try again.',
+        text: 'Sorry, I encountered an error. Please try again later.',
         sender: 'bot'
       };
       setMessages((prev) => [...prev, errorMessage]);
@@ -118,7 +116,6 @@ const ChatbotWidget: React.FC = () => {
       handleSendMessage();
     }
   };
-
 
   return (
     <>
@@ -160,7 +157,6 @@ const ChatbotWidget: React.FC = () => {
                         : 'bg-gray-700 text-gray-200'
                     }`}
                   >
-                    {/* Use ReactMarkdown to render the bot's response */}
                     <ReactMarkdown className="prose prose-sm prose-invert">
                         {msg.text}
                     </ReactMarkdown>
@@ -170,7 +166,7 @@ const ChatbotWidget: React.FC = () => {
               {isLoading && <TypingIndicator />}
             </div>
 
-            {/* Input Area */}
+            {/* --- MODIFIED INPUT AREA WITH SEND BUTTON --- */}
             <div className="p-2 border-t border-gray-700 flex items-center space-x-2 flex-shrink-0">
               <input
                 type="text"
