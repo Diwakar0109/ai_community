@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
     >
       <div className="container mx-auto px-6 text-center text-gray-400">
         <div className="flex justify-center gap-6 mb-4">
-          <a href="#" className="hover:text-cyan-400 transition-colors"><FiLinkedin size={24} /></a>
-          <a href="#" className="hover:text-cyan-400 transition-colors"><FiInstagram size={24} /></a>
+          <a href="https://www.linkedin.com/in/ai-community/" className="hover:text-cyan-400 transition-colors"><FiLinkedin size={24} /></a>
+          <a href="https://www.instagram.com/aicommunity_bit/" className="hover:text-cyan-400 transition-colors"><FiInstagram size={24} /></a>
           <a href="#" className="hover:text-cyan-400 transition-colors"><FiTwitter size={24} /></a>
         </div>
         <p>&copy; {new Date().getFullYear()} AI Innovators. All Rights Reserved.</p>
