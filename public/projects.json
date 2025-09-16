@@ -51,5 +51,85 @@
     "links": {
       "document": "https://docs.google.com/document/d/1IXH3bn8Z98p_UajdRsOn7w-vNlJlO9zK-Z7FYZ-iCUU/edit?usp=sharing"
     }
+  },
+  {
+    "id": "proj-005", 
+    "topic": "Invoice Processing with AI and OCR for Structured JSON Output",
+    "category": "Gen AI",
+    "tags": ["AI", "OCR", "Invoice Automation", "Data Extraction", "JSON", "Python", "LLM", "Document Processing"],
+    "short_description": "Automated system using AI and OCR to extract key invoice details from scanned images and convert them into structured JSON.",
+    "brief_description": "Leverages AI and OCR to process scanned invoices, automatically extracting information like Vendor, Invoice Number, Date, Items, Amount, and Taxes, then converting it into a clean JSON format. This streamlines data entry for accounting/ERP systems, reducing manual effort and improving accuracy. Perfect for businesses and developers seeking intelligent document processing solutions with Python, OCR, and AI/LLM models.",
+    "thumbnail_url": "https://i.ibb.co/8g19QV0D/Screenshot-from-2025-09-16-09-51-33.png", 
+    "video_url": "https://www.youtube.com/embed/3uIK7v2ql48?si=D9pvuR8pWoGj6FIp",
+    "links": {
+    }
+  },
+  {
+    "id": "proj-006", 
+    "topic": "Tennis Player Tracking for Advanced Sports Analytics and Real-Time Performance Insights",
+    "category": "Computer Vision",
+    "tags": ["People Tracking", "Player Performance", "Sports Analytics", "Real-time Tracking", "Data Analysis", "Coaching Insights"],
+    "short_description": "Revolutionary tennis player tracking technology for real-time performance evaluation, strategy, and coaching insights.",
+    "brief_description": "This project showcases cutting-edge tennis player tracking technology that revolutionizes sports analytics. It provides real-time tracking and data analysis of tennis players, offering features like movement tracking, shot analysis, heatmaps, and performance metrics dashboards. This data-driven approach enhances performance evaluation, strategy planning, and coaching insights, making it perfect for athletes, coaches, and sports enthusiasts aiming for a competitive advantage.",
+    "thumbnail_url": "https://i.ibb.co/1YQ3fy6B/Screenshot-from-2025-09-16-09-54-47.png", 
+    "video_url": "https://www.youtube.com/embed/MtR5Se_htfY?si=ljGuNY7WR9_0eusJ",
+    "links": {}
   }
+  ,
+  {
+    "id": "proj-007", 
+    "topic": "Face-Following Robot in Action with Smart Tracking & AI Robotics",
+    "category": "Robotics",
+    "tags": ["Face Tracking", "AI Robotics", "Computer Vision", "Smart Robots", "Real-time Tracking"],
+    "short_description": "A smart robot that uses AI and computer vision to detect and smoothly follow human faces in real-time.",
+    "brief_description": "This project showcases a robot that actively tracks and follows faces using AI-powered vision. It demonstrates real-time face detection and precise servo motor control to keep its focus on a target. This technology is perfect for robotics enthusiasts and AI developers, with potential applications in security, customer service, and interactive robots.",
+    "thumbnail_url": "https://i.ibb.co/qFhtfQ9g/Screenshot-from-2025-09-16-10-01-39.png", 
+    "video_url": "https://www.youtube.com/embed/7MN6y2Jr12k?si=vmV8mXWHr8GDYAHH",
+    "links": {}
+  },
+  {
+    "id": "proj-008", 
+    "topic": "AI Medical Chatbot: Your Virtual Health Assistant",
+    "category": "Gen AI",
+    "tags": ["Medical Chatbot", "AI Health Assistant", "HealthTech", "VirtualDoctor", "HealthcareInnovation", "AI", "Chatbot"],
+    "short_description": "An AI-powered medical chatbot providing instant virtual health assistance, from symptom analysis to answering health queries.",
+    "brief_description": "This video explores how AI-powered medical chatbots are transforming healthcare. It demonstrates a virtual health assistant that provides instant, reliable support, from symptom checking to appointment scheduling. The chatbot uses natural language to answer health questions 24/7, improving accessibility and reducing wait times. While a powerful tool, it is not a substitute for professional medical advice.",
+    "thumbnail_url": "https://i.ibb.co/rRXkFvKB/Screenshot-from-2025-09-16-10-07-08.png", 
+    "video_url": "https://www.youtube.com/embed/H71L8mywT6U?si=PRXSR78efqparaCi",
+    "links": {}
+  },
+  {
+    "id": "proj-009", 
+    "topic": "AI-Powered Object Detection and Measurement with Computer Vision",
+    "category": "Computer Vision",
+    "tags": ["Object Detection", "Computer Vision", "AI", "Measurement", "TechTutorials", "OpenCV"],
+    "short_description": "A demonstration of real-time object detection and accurate dimension measurement using AI and computer vision.",
+    "brief_description": "This video explores how AI-powered object detection and measurement are transforming technology. We demonstrate how to identify objects in real-time and accurately measure their dimensions using computer vision techniques and popular tools like YOLO, TensorFlow, and OpenCV. This has powerful real-world applications in industry, robotics, and augmented reality, offering insights for developers, engineers, and tech enthusiasts.",
+    "thumbnail_url": "https://i.ibb.co/7xTgkMDV/Screenshot-from-2025-09-16-10-11-38.png", 
+    "video_url": "https://www.youtube.com/embed/d-qpcf7KSkI?si=06agudYs54TQOoBQ",
+    "links": {}
+  },
+  {
+    "id": "proj-010", 
+    "topic": "Real-Time Vehicle and License Plate Detection System",
+    "category": "Computer Vision",
+    "tags": ["Computer Vision", "NVIDIA-DeepStream", "Edge AI", "Jetson Orin", "License Plate Detection", "Vehicle Tracking"],
+    "short_description": "An advanced real-time vehicle and license plate detection system built with NVIDIA DeepStream for high-performance Edge AI applications.",
+    "brief_description": "This project demonstrates a high-performance system for real-time vehicle tracking and license plate detection using the NVIDIA DeepStream SDK on an Edge AI device like the Jetson Orin. The system accurately identifies vehicles, reads their license plates, and tracks their movement through designated zones, making it ideal for intelligent transportation systems, automated toll collection, and security surveillance.",
+    "thumbnail_url": "https://i.ibb.co/prjx166n/Screenshot-from-2025-09-16-10-16-26.png", 
+    "video_url": "https://www.youtube.com/embed/HQZUCqlQpUo?si=vL3HTwv0AKoEWDtp",
+    "links": {}
+  },
+  {
+    "id": "proj-011", 
+    "topic": "AI-Powered 6-Axis Pick and Place Robot",
+    "category": "Robotics",
+    "tags": ["Robotics", "AI", "Computer Vision", "Pick and Place", "6-Axis Robot", "Industrial Automation", "Machine Vision"],
+    "short_description": "An intelligent 6-axis robotic arm using AI and computer vision for precise and automated pick and place tasks.",
+    "brief_description": "This project showcases an advanced 6-axis pick and place robot powered by AI and computer vision. The system accurately detects, locates, and manipulates objects, demonstrating a high degree of automation. It is an ideal solution for manufacturing, logistics, and other industrial applications where efficiency and precision are critical.",
+    "thumbnail_url": "https://i.ibb.co/3y2GrF3r/Screenshot-from-2025-09-16-10-23-19.png", 
+    "video_url": "https://www.youtube.com/embed/dezrZNnwnEU?si=Y7IqOzcVtEiE0_fG",
+    "links": {}
+  }
+
 ]
