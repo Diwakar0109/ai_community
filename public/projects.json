@@ -7,7 +7,7 @@
     "tags": ["Computer Vision", "NVIDIA-Deepstream", "Jetson orin"],
     "short_description": "Real-time people analytics product using computer vision and NVIDIA DeepStream, optimized for edge devices. Deployed at Sankara Hospital, Coimbatore, delivering actionable insights for smart surveillance, crowd management, and operational optimization.",
     "brief_description": "Description:\nA fully developed product for real-time people analytics using computer vision and NVIDIA DeepStream. The system is optimized for edge devices, enabling scalable and efficient deployment in resource-constrained environments. Currently deployed at Sankara Hospital, Coimbatore.\n\nKey Contributions:\n\n- Designed a robust pipeline for multi-stream video processing and real-time analytics.\n- Integrated automated logging and reporting for insights such as crowd patterns and occupancy trends.\n- Optimized for low-latency performance, ensuring smooth operation on edge-based deployments (Jetson Orin Nano, Jetson AGX Orin, Jetson Thor series, etc.).\n\nImpact:\n\n- Provides organizations with actionable insights for crowd management, retail analytics, and smart surveillance.\n- Reduces reliance on manual monitoring while increasing operational efficiency.\n- Flexible design allows deployment from small-scale edge devices to larger centralized systems.",
-    "thumbnail_url": "https://i.ibb.co/ccqL5g2S/aliyar-count.png",
+    "thumbnail_url": "assest/1.png",
     "video_url": "https://i.ibb.co/ccqL5g2S/aliyar-count.png",
     "links": {
       "document": "https://docs.google.com/document/d/1rQzZSVaaVzCJBJ0_3hf9UJj8BjDLrr886RJpSazljMo/edit?usp=sharing"
@@ -177,5 +177,4 @@
     "video_url": "https://www.youtube.com/embed/a1gHInPyvtE?si=UonllxZT1Gju373i",
     "links": {}
   }
-
 ]
