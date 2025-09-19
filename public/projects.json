@@ -152,7 +152,8 @@
     "short_description": "A computer vision system that uniquely identifies every individual using their registration number as they walk in.",
     "brief_description": "The Unique Person Identification System leverages computer vision and machine learning to accurately identify and authenticate individuals in real-time. Each person walking into a monitored space is recognized uniquely and mapped to their registration number, ensuring secure access and precise record-keeping. This solution can be deployed in institutions, workplaces, or secure facilities where monitoring and identity validation are critical. By combining advanced face detection, feature extraction, and classification models, the system delivers reliable person tracking with minimal human intervention.",
     "thumbnail_url": "https://i.ibb.co/Y71fx81L/Screenshot-from-2025-09-19-11-59-36.png",
-    "video_url": "https://www.youtube.com/embed/mC6yzQj7YT0?si=z4u_gg1aSQxkAfNN"
+    "video_url": "https://www.youtube.com/embed/mC6yzQj7YT0?si=z4u_gg1aSQxkAfNN",
+    "links": {}
   },
   {
     "id": "proj-014",
@@ -162,7 +163,8 @@
     "short_description": "A custom simulation tool designed to control and visualize the movements of a 6-axis robotic arm with precision and flexibility.",
     "brief_description": "The 6 Axis Robot Custom Simulation Tool provides a virtual environment to simulate, control, and test the motion of an industrial-grade robotic arm. The system allows users to manipulate each axis—base, shoulder, elbow, wrist, finger, and tip—via an intuitive control panel. With features like trajectory planning, action selection, and real-time position tracking, this tool is ideal for robotics research, industrial training, and automation prototyping. It offers engineers and developers a safe, cost-effective platform to test robotic operations before deploying them in real-world environments.",
     "thumbnail_url": "https://i.ibb.co/23GBT3y5/Screenshot-from-2025-09-19-12-06-05.png",
-    "video_url": "https://www.youtube.com/embed/R3r9Ok6-gSs?si=rzcJT2IrVuK2kkmT"
+    "video_url": "https://www.youtube.com/embed/R3r9Ok6-gSs?si=rzcJT2IrVuK2kkmT",
+    "links": {}
   },
   {
     "id": "proj-015",
@@ -172,7 +174,8 @@
     "short_description": "An AI-driven healthcare system designed for tinnitus management using machine learning models, physiological monitoring, and customizable auditory therapies.",
     "brief_description": "This project introduces an AI-powered healthcare platform focused on tinnitus management. It integrates patient data collected through ENT consultations, preprocesses it for accuracy, and applies logistic regression for patient detection and random forest models for personalized auditory frequency recommendations. The system continuously monitors pulse and galvanic skin response (GSR) values to detect abnormalities and automatically plays tailored frequencies for symptom relief. A Flutter-based mobile app with voice assistance ensures accessibility across Android and iOS devices, while a web-based survey tool collects demographic and condition-specific data to refine models and aid research. The platform also predicts the current and future stages of tinnitus over a 2–3 week period, enabling personalized treatment and supporting government-backed research initiatives.",
     "thumbnail_url": "https://i.ibb.co/JjxhfpxX/Screenshot-from-2025-09-19-12-17-43.png",
-    "video_url": "https://www.youtube.com/embed/a1gHInPyvtE?si=UonllxZT1Gju373i"
+    "video_url": "https://www.youtube.com/embed/a1gHInPyvtE?si=UonllxZT1Gju373i",
+    "links": {}
   }
 
 ]
